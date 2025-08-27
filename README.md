@@ -18,7 +18,7 @@ pip install -r requirements.txt
 pip install torch transformers scikit-learn pandas numpy psycopg2-binary matplotlib seaborn plotly
 ```
 
-## Project Structure
+## Structure
 
 ```
 LLMHackScape/
