@@ -160,8 +160,7 @@ quality_score = evaluator.get_cluster_quality_score()
 print(f"Quality Score: {quality_score:.3f}")
 ```
 
-#### Step 3: Parameter Optimization (Optional)
-
+#### Step 3: Parameter Optimization
 ```python
 from cluster_evaluation import quick_evaluation
 
