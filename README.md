@@ -37,7 +37,7 @@ LLMHackScape/
 Main clustering class that handles:
 - LLM embedding generation
 - HDBSCAN clustering
-- Cluster summary generation
+- Cluster label generation
 
 ```python
 from src.user_clustering import ClusterClassifier
@@ -175,7 +175,7 @@ def optimize_parameters(texts, param_grid):
             classifier = ClusterClassifier(
                 dbscan_eps=eps,
                 dbscan_min_samples=min_samples,
-                summary_create=False
+                label_create=False
             )
             
             embeddings, labels, _ = classifier.fit(texts)
@@ -315,7 +315,7 @@ ClusterClassifier(
     embed_device=0,              # GPU device for embeddings
     dbscan_eps=0.1,             # HDBSCAN epsilon parameter
     dbscan_min_samples=10,      # HDBSCAN min samples parameter  
-    summary_create=True         # Generate cluster summaries
+    label_create=True         # Generate cluster summaries
 )
 ```
 
