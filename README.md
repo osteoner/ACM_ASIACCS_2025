@@ -258,14 +258,34 @@ results/
 [
   {
     "user_id": "user_123",
-    "sup_sequence": "malware_dev_2023-01 exploit_trade_2023-02 darknet_market_2023-03"
+    "username": "hackmaster99",
+    "sup_sequence": "[M]hackmaster99[SEP]850[SEP]15[SEP]42[T]malware_development[SEP]exploit_trading[SEP]darknet_markets[R]looking for zero day exploits[SEP]anyone selling botnet access[SEP]crypto payment preferred"
   },
   {
-    "user_id": "user_456", 
-    "sup_sequence": "cryptocurrency_fraud_2023-01 social_eng_2023-02"
+    "user_id": "user_456",
+    "username": "cryptolord", 
+    "sup_sequence": "[M]cryptolord[SEP]1200[SEP]8[SEP]23[T]cryptocurrency_fraud[SEP]social_engineering[R]new mixing service available[SEP]phishing templates for sale"
   }
 ]
 ```
+
+#### SUP Sequence Format:
+
+The SUP sequence follows this structured format using special tokens:
+
+- `[M]` - **Metadata section**: Contains user information
+  - Username, reputation score, thread count, post count
+  - Format: `[M]{username}[SEP]{reputation}[SEP]{thread_count}[SEP]{post_count}`
+
+- `[T]` - **Threads section**: Lists thread names the user participated in
+  - Format: `[T]{thread1}[SEP]{thread2}[SEP]{thread3}...`
+
+- `[R]` - **Replies section**: Contains user's post content
+  - Format: `[R]{post1}[SEP]{post2}[SEP]{post3}...`
+
+- `[SEP]` - **Separator token**: Delimits different elements within sections
+
+### Output Format (Cluster Labels)
 
 ### Output Format (Cluster Labels)
 
