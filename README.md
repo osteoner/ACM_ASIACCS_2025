@@ -74,7 +74,7 @@ python run.py --input_file user_representations.json --output_dir ./results
 python run.py --input_file data.json --optimize_params --output_dir ./results
 
 # Generate SUP sequences from database first
-python run.py --generate_sup --db_host localhost --db_name nulled --output_dir ./results
+python run.py --generate_sup --db_host localhost --db_name hackforums --output_dir ./results
 ```
 
 #### Key Arguments:
@@ -94,7 +94,7 @@ python run.py --generate_sup --db_host localhost --db_name nulled --output_dir .
 | Argument | Description | Default |
 |----------|-------------|---------|
 | `--db_host` | Database host | `localhost` |
-| `--db_name` | Database name | `nulled` |
+| `--db_name` | Database name | `hackforums` |
 | `--db_port` | Database port | `5434` |
 | `--start_date` | Start date for data | `2018-01-01` |
 | `--end_date` | End date for data | `2024-12-31` |
@@ -112,7 +112,7 @@ import json
 # Connect to database
 conn = psycopg2.connect(
     host='localhost', 
-    dbname='nulled', 
+    dbname='hackforums', 
     port=5434, 
     user='', 
     password=''
