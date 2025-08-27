@@ -67,13 +67,13 @@ quality_score = evaluator.get_cluster_quality_score()
 The `run.py` script handles the complete workflow with command-line arguments:
 
 ```bash
-# Basic usage with existing SUP data
+# Basic usage with existing user data
 python run.py --input_file user_representations.json --output_dir ./results
 
 # With parameter optimization
 python run.py --input_file data.json --optimize_params --output_dir ./results
 
-# Generate SUP sequences from database first
+# Generate user sequences from database first
 python run.py --generate_sup --db_host localhost --db_name hackforums --output_dir ./results
 ```
 
@@ -81,7 +81,7 @@ python run.py --generate_sup --db_host localhost --db_name hackforums --output_d
 
 | Argument | Description | Example |
 |----------|-------------|---------|
-| `--input_file` | Path to JSON file with SUP sequences | `data.json` |
+| `--input_file` | Path to JSON file with user sequences | `data.json` |
 | `--output_dir` | Directory to save results | `./results` |
 | `--n_samples` | Limit number of samples | `50000` |
 | `--embed_device` | GPU device ID | `0` |
@@ -89,7 +89,7 @@ python run.py --generate_sup --db_host localhost --db_name hackforums --output_d
 | `--dbscan_min_samples` | HDBSCAN min samples | `10` |
 | `--optimize_params` | Enable parameter optimization | `--optimize_params` |
 
-#### Database Parameters (for SUP generation):
+#### Database Parameters (for user generation):
 
 | Argument | Description | Default |
 |----------|-------------|---------|
@@ -103,7 +103,7 @@ python run.py --generate_sup --db_host localhost --db_name hackforums --output_d
 
 ### Option 2: Step-by-Step Manual Process
 
-#### Step 1: Generate SUP Sequences (if needed)
+#### Step 1: Generate user Sequences (if needed)
 
 ```python
 import psycopg2
@@ -223,7 +223,7 @@ python run.py \
     --output_dir ./optimized_results
 ```
 
-### Generate SUP and Cluster
+### Generate user and Cluster
 
 ```bash
 python run.py \
@@ -268,9 +268,9 @@ results/
 ]
 ```
 
-#### SUP Sequence Format:
+#### User Sequence Format:
 
-The SUP sequence follows this structured format using special tokens:
+The user sequence follows this structured format using special tokens:
 
 - `[M]` - **Metadata section**: Contains user information
   - Username, reputation score, thread count, post count
